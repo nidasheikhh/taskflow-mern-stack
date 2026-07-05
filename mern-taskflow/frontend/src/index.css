@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F3F6F5;
+  color: #0B2B26;
+  font-family: 'Inter', sans-serif;
+}
+
+::selection {
+  background-color: #F5A524;
+  color: #0B2B26;
+}
+
+/* Signature element: animated flow progress ring */
+.flow-ring {
+  transform: rotate(-90deg);
+}
+.flow-ring circle {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Card hover lift */
+.task-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(11, 43, 38, 0.18);
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #F5A524;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
